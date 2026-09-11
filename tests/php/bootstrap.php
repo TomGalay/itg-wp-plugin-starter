@@ -15,7 +15,7 @@ require_once dirname( __DIR__, 2 ) . '/vendor/autoload.php';
 $itg_plugin_dir = dirname( __DIR__, 2 );
 
 if ( ! defined( 'ITG_PLUGIN_SETUP_VERSION' ) ) {
-	define( 'ITG_PLUGIN_SETUP_VERSION', '0.1.0' );
+	define( 'ITG_PLUGIN_SETUP_VERSION', '0.1.1' );
 }
 if ( ! defined( 'ITG_PLUGIN_SETUP_DIR' ) ) {
 	define( 'ITG_PLUGIN_SETUP_DIR', $itg_plugin_dir . '/' );

@@ -1,6 +1,6 @@
 {
 	"name": "itg-plugin-setup",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A WordPress plugin foundation with a pluggable integrations layer (Firebase, Email) and WPCS tooling.",
 	"author": "ITG",
 	"license": "GPL-2.0-or-later",

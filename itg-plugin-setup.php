@@ -3,7 +3,7 @@
  * Plugin Name:       ITG Plugin Setup
  * Plugin URI:        https://example.com/itg-plugin-setup
  * Description:       A WordPress plugin foundation with a pluggable integrations layer (Firebase, Email) and WPCS tooling.
- * Version:           0.1.0
+ * Version:           0.1.1
  * Requires at least: 6.6
  * Requires PHP:      8.0
  * Author:            ITG
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ITG_PLUGIN_SETUP_VERSION', '0.1.0' );
+define( 'ITG_PLUGIN_SETUP_VERSION', '0.1.1' );
 define( 'ITG_PLUGIN_SETUP_FILE', __FILE__ );
 define( 'ITG_PLUGIN_SETUP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ITG_PLUGIN_SETUP_URL', plugin_dir_url( __FILE__ ) );
