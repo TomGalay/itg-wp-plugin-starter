@@ -204,3 +204,5 @@ require_once ITG_PLUGIN_SETUP_DIR . 'integrations/email/providers/class-itg-plug
 require_once ITG_PLUGIN_SETUP_DIR . 'integrations/email/providers/class-itg-plugin-setup-email-mailgun.php';
 require_once ITG_PLUGIN_SETUP_DIR . 'integrations/email/class-itg-plugin-setup-integration-email.php';
 require_once ITG_PLUGIN_SETUP_DIR . 'integrations/class-itg-plugin-setup-integration-manager.php';
+require_once ITG_PLUGIN_SETUP_DIR . 'rest/class-itg-plugin-setup-rest-controller.php';
+require_once ITG_PLUGIN_SETUP_DIR . 'rest/class-itg-plugin-setup-rest-integrations-controller.php';

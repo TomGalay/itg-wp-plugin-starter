@@ -53,7 +53,31 @@
 
 ## Running the integration tests locally
 
-The integration suite needs the WordPress test library and a test database:
+The WordPress test library ships with the `wp-phpunit/wp-phpunit` Composer
+dependency, so a normal `composer install` is enough — no SVN checkout needed.
+
+1. Create a throwaway database (its contents are wiped on every run):
+
+   ```sql
+   CREATE DATABASE wordpress_test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
+
+2. Copy the sample config and set `ABSPATH` and the database credentials:
+
+   ```bash
+   cp tests/wp-tests-config-sample.php tests/wp-tests-config.php
+   ```
+
+3. Run the suite:
+
+   ```bash
+   composer test:integration
+   ```
+
+`tests/php/bootstrap-integration.php` auto-detects the bundled library and the
+local config. Set `WP_TESTS_DIR` to override the library location.
+
+CI instead installs a standalone test library and points `WP_TESTS_DIR` at it:
 
 ```bash
 bash bin/install-wp-tests.sh wordpress_test root '' localhost latest

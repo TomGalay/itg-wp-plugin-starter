@@ -36,11 +36,15 @@ abstract class ITG_Plugin_Setup_REST_Controller {
 	/**
 	 * Default permission callback.
 	 *
+	 * Must be public: WordPress invokes registered permission callbacks via
+	 * call_user_func() from outside the class scope, so a protected method
+	 * triggers a TypeError on every request.
+	 *
 	 * @since 0.1.0
 	 *
 	 * @return bool
 	 */
-	protected function permissions_check() {
+	public function permissions_check() {
 		return current_user_can( 'manage_options' );
 	}
 }

@@ -11,6 +11,7 @@ phpcs.xml
 .env
 .env.*
 !.env.example
+tests/wp-tests-config.php
 
 # Tooling caches
 .phpunit.result.cache

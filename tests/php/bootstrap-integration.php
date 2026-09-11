@@ -14,12 +14,29 @@
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 if ( ! $_tests_dir ) {
-	$_tests_dir = rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib';
+	// Prefer the WordPress test library bundled with wp-phpunit, so the suite
+	// runs on a plain `composer install` with no SVN / install-wp-tests.sh.
+	$_itg_vendored_tests = dirname( __DIR__, 2 ) . '/vendor/wp-phpunit/wp-phpunit';
+
+	if ( file_exists( $_itg_vendored_tests . '/includes/functions.php' ) ) {
+		$_tests_dir = $_itg_vendored_tests;
+	} else {
+		$_tests_dir = rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib';
+	}
 }
 
 if ( ! file_exists( $_tests_dir . '/includes/functions.php' ) ) {
 	echo 'Could not find ' . $_tests_dir . '/includes/functions.php, have you run bin/install-wp-tests.sh ?' . PHP_EOL; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	exit( 1 );
+}
+
+// A local tests/wp-tests-config.php (git-ignored) overrides the config lookup.
+if ( ! defined( 'WP_TESTS_CONFIG_FILE_PATH' ) ) {
+	$_itg_tests_config = dirname( __DIR__ ) . '/wp-tests-config.php';
+
+	if ( file_exists( $_itg_tests_config ) ) {
+		define( 'WP_TESTS_CONFIG_FILE_PATH', $_itg_tests_config );
+	}
 }
 
 require_once $_tests_dir . '/includes/functions.php';

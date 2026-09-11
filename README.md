@@ -162,6 +162,25 @@ Namespace: `itg-plugin-setup/v1`
   zip and publishes a GitHub Release.
 - Dependabot keeps Composer, npm and Actions dependencies up to date.
 
+### Distribution artifacts
+
+`.distignore` is the single source of truth for what ships. The release workflow
+copies the tree minus the ignored paths, so the **working copy is the source
+repository, not the distributable**.
+
+| Path | In git | In release zip | Why |
+|------|--------|----------------|-----|
+| `build/` | ignored | **included** | Required at runtime for `wp_enqueue_*`. |
+| `vendor/` | ignored | excluded | The runtime uses explicit `require_once`; nothing loads `vendor/autoload.php`. |
+| `node_modules/` | ignored | excluded | Build-time only. |
+| `tests/`, `docs/`, `bin/`, `*.dist`, `composer.*`, `package*` | tracked | excluded | Development-only. |
+
+Do not ship the working copy wholesale (i.e. "everything except `.git`"): it
+bundles hundreds of MB of `node_modules/` and exposes test/config files. To
+produce a distributable locally, run the same steps as `release.yml`:
+`composer install --no-dev`, `npm ci`, `npm run build`, then copy with
+`rsync --exclude-from=.distignore`.
+
 ## Troubleshooting
 
 - **`@jsonjoy.com/fs-fsa@4.75.0` 404 during `npm install`.** A broken publish on
