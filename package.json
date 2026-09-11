@@ -1,0 +1,22 @@
+{
+	"name": "itg-plugin-setup",
+	"version": "0.1.0",
+	"description": "A WordPress plugin foundation with a pluggable integrations layer (Firebase, Email) and WPCS tooling.",
+	"author": "ITG",
+	"license": "GPL-2.0-or-later",
+	"main": "build/admin.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style",
+		"test": "wp-scripts test-unit-js"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^35.0.0"
+	},
+	"overrides": {
+		"memfs": "4.74.0"
+	}
+}

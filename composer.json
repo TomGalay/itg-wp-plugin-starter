@@ -1,0 +1,27 @@
+{
+	"name": "itg/itg-plugin-setup",
+	"description": "A WordPress plugin foundation with a pluggable integrations layer (Firebase, Email) and WPCS tooling.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.2",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"phpunit/phpunit": "^9.6 || ^10.5 || ^11.5",
+		"wp-coding-standards/wpcs": "^3.4",
+		"wp-phpunit/wp-phpunit": "^6.7",
+		"yoast/phpunit-polyfills": "^3.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	},
+	"scripts": {
+		"scaffold": "php bin/scaffold.php",
+		"lint": "phpcs",
+		"lint:fix": "phpcbf",
+		"test": "phpunit",
+		"test:integration": "phpunit -c phpunit-integration.xml.dist"
+	}
+}

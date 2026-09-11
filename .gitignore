@@ -1,0 +1,21 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Build output
+/build/
+/coverage/
+
+# Local overrides and secrets
+phpcs.xml
+.env
+.env.*
+!.env.example
+
+# Tooling caches
+.phpunit.result.cache
+
+# OS / editor
+*.log
+.DS_Store
+Thumbs.db
