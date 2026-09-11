@@ -22,5 +22,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - GitHub Actions CI, nightly integration tests, tagged releases, Dependabot and
   issue/PR templates.
 
-[Unreleased]: https://github.com/itg/itg-wp-plugin-starter/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/itg/itg-wp-plugin-starter/releases/tag/v0.1.0
+[Unreleased]: https://github.com/TomGalay/itg-wp-plugin-starter/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/TomGalay/itg-wp-plugin-starter/releases/tag/v0.1.0

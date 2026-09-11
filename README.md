@@ -1,6 +1,6 @@
 # ITG WP Plugin Starter
 
-[![CI](https://github.com/itg/itg-wp-plugin-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/itg/itg-wp-plugin-starter/actions/workflows/ci.yml)
+[![CI](https://github.com/TomGalay/itg-wp-plugin-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/TomGalay/itg-wp-plugin-starter/actions/workflows/ci.yml)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](LICENSE)
 [![PHP 8.0+](https://img.shields.io/badge/php-8.0%2B-777bb4.svg)](https://www.php.net/)
 [![WordPress 6.6+](https://img.shields.io/badge/wordpress-6.6%2B-21759b.svg)](https://wordpress.org/)
