@@ -11,7 +11,7 @@ A reusable WordPress **plugin starter** with:
 - **WordPress Coding Standards** enforced (`WordPress-Extra` + `PHPCompatibilityWP`).
 - A modern **`@wordpress/scripts`** JS/CSS build with multiple entries.
 - **PHPUnit** (unit + optional WordPress integration) and **Jest** test suites.
-- **GitHub Actions** CI, nightly integration tests and tagged releases.
+- **GitHub Actions** CI, integration tests on pull requests and tagged releases.
 - A **one-command scaffolder** that renames the starter into a new plugin.
 
 The repository ships a fully working example plugin, `itg-plugin-setup`, with two
@@ -156,8 +156,8 @@ Namespace: `itg-plugin-setup/v1`
 
 - **`.github/workflows/ci.yml`** — PHPCS (PHP 8.0–8.3), PHPUnit (8.2–8.3), and
   JS lint/test/build (Node 20/22).
-- **`.github/workflows/integration.yml`** — WordPress integration tests on a
-  nightly schedule and manual dispatch (MySQL service).
+- **`.github/workflows/integration.yml`** — WordPress integration tests on pull
+  requests and manual dispatch (MySQL service).
 - **`.github/workflows/release.yml`** — pushing a `v*` tag builds a production
   zip and publishes a GitHub Release.
 - Dependabot keeps Composer, npm and Actions dependencies up to date.

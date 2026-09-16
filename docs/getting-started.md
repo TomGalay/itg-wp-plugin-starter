@@ -77,9 +77,12 @@ dependency, so a normal `composer install` is enough — no SVN checkout needed.
 `tests/php/bootstrap-integration.php` auto-detects the bundled library and the
 local config. Set `WP_TESTS_DIR` to override the library location.
 
-CI instead installs a standalone test library and points `WP_TESTS_DIR` at it:
+CI instead installs a standalone test library and points `WP_TESTS_DIR` at it.
+That path needs `subversion`, which is no longer preinstalled on the
+`ubuntu-latest` runner:
 
 ```bash
+sudo apt-get update && sudo apt-get install -y subversion
 bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
 composer test:integration
 ```

@@ -6,6 +6,18 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Integration Tests workflow no longer fails while installing the WordPress
+  test library: `subversion` is installed explicitly, since `ubuntu-latest` no
+  longer ships it, and `WP_TESTS_DIR` is pinned so the bootstrap uses the
+  installed library.
+
+### Changed
+
+- Integration Tests now run on pull requests and manual dispatch instead of a
+  nightly schedule.
+
 ## [0.1.1] - 2026-09-11
 
 ### Fixed
