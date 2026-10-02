@@ -14,7 +14,7 @@
 		"test": "wp-scripts test-unit-js"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^35.0.0"
+		"@wordpress/scripts": "^36.0.0"
 	},
 	"overrides": {
 		"memfs": "4.74.0"
